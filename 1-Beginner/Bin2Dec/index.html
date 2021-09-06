@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bin2Dec</title>
+    <style>
+        body {
+            align-items: center;
+            font-family: "Roboto Mono", "Consolas", monospace;
+            background-color: dimgray;
+            color:ghostwhite
+        }
+
+        input {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Binary to Decimal Converter</h1>
+    </header>
+    <article>
+        <header>
+            <ul>
+                <li>Enter a binary number up to 8 digits</li>
+                <li>You can only enter 0 and 1</li>
+                <li>After enter digits, press Convert!</li>
+            </ul>
+        </header>
+        <section>
+            <div>
+                <input type="text" name="binInput" id="binInput" minlength="1" maxlength="8" />
+            </div>
+            <div>
+                <button type="button" id="convert">Convert!</button>
+            </div>
+            <div>
+                <p name="result" id="result"></p>
+            </div>
+        </section>   
+    </article>
+    <footer">
+        <p>made by kanglaeheon</p>
+    </footer>
+    <script src="Bin2Dec-App.js"></script>
+</body>
+</html>

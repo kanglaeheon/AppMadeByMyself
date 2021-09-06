@@ -2,46 +2,34 @@
 
 **Tier:** 1-Beginner
 
-Binary is the number system all digital computers are based on.
-Therefore it's important for developers to understand binary, or base 2,
-mathematics. The purpose of Bin2Dec is to provide practice and
-understanding of how binary calculations.
+이진수는 모든 디지털 컴퓨터가 기반으로 하는 숫자 시스템입니다.
+그러므로 개발자들은 이진수, 즉 기초 2 수학을 이해하는 것이 중요합니다. Bin2Dec의 목적은 이진 계산 방법에 대한 연습과 이해를 제공하는 것입니다.
 
-Bin2Dec allows the user to enter strings of up to 8 binary digits, 0's
-and 1's, in any sequence and then displays its decimal equivalent.
+Bin2Dec을 사용하면 최대 8개의 이진수, 0 및 1의 문자열을 임의의 순서로 입력할 수 있으며, 그 다음 소수점 등가값을 표시할 수 있습니다.
 
-This challenge requires that the developer implementing it follow these
-constraints:
+이 과제를 구현하는 개발자는 다음을 따라야 합니다.
 
--   Arrays may not be used to contain the binary digits entered by the user
--   Determining the decimal equivalent of a particular binary digit in the
-    sequence must be calculated using a single mathematical function, for
-    example the natural logarithm. It's up to you to figure out which function
-    to use.
+제약 조건:
+- 사용자가 입력한 이진수를 포함하는 데 어레이를 사용할 수 없습니다.
+- 시퀀스에서 특정 이진수의 소수 자릿수를 구하는 것은 단일 수학 함수(예: 자연 로그)를 사용하여 계산해야 합니다. 어떤 기능을 사용할지 결정하는 것은 당신에게 달려 있습니다.
 
-## User Stories
+## 사용자 요구조건
 
--   [ ] User can enter up to 8 binary digits in one input field
--   [ ] User must be notified if anything other than a 0 or 1 was entered
--   [ ] User views the results in a single output field containing the decimal (base 10) equivalent of the binary number that was entered
+-   [ ] 사용자는 최대 8자리의 이진수를 input field에 입력할 수 있다
+-   [ ] 사용자는 0이나 1을 제외한 값을 입력하면 경고 메시지를 받아야한다
+-   [ ] 사용자는 입력 이진수와 결과 십진수를 단일 출력 필드에서 확인한다
 
-## Bonus features
+## 추가 기능
 
--   [ ] User can enter a variable number of binary digits
+-   [ ] 사용자는 변수 이진수 숫자를 입력할 수 있다
 
 ## Useful links and resources
 
-[Binary number system](https://en.wikipedia.org/wiki/Binary_number)
+[App-Idea 출처](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Bin2Dec-App.md)
 
-## Example projects
+## Comment
 
-Try not to view this until you've developed your own solution:
+SPA(Single Page Application) 방식으로 설계하는 것이 용이하다고 판단
+유저 클라이언트 상에서 연산 후 바로 출력
 
--   [Binary to decimal conversion program for beginners](https://www.youtube.com/watch?v=YMIALQE26KQ)
--   [Binary to Decimal converter using React](https://github.com/email2vimalraj/Bin2Dec)
--   [Binary to Decimal converter with plain html, js and css](https://grfreire.github.io/Bin2Dec/)
--   [Binary to Decimal converter using Flutter & Dart](https://github.com/israelss/AppIdeasCollection/tree/master/Tier1/Bin2Dec)
-    -   [Live preview built with Flutter for Web](https://bin2dec.web.app/#/)
--   [Binary to Decimal converter using React](https://github.com/geoffctn/Bin2Dec)
--   [Matrix-like Binary to Decimal converter using Angular](https://github.com/ZangiefWins/MatrixBin2Dec)
-    -   [Live preview on heroku](https://matrix-bin2dec.herokuapp.com/)
+HTML + CSS + Vanilla JavaScript로 구성
