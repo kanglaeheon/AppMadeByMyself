@@ -31,5 +31,6 @@ Bin2Dec을 사용하면 최대 8개의 이진수, 0 및 1의 문자열을 임의
 
 SPA(Single Page Application) 방식으로 설계하는 것이 용이하다고 판단
 유저 클라이언트 상에서 연산 후 바로 출력
-
 HTML + CSS + Vanilla JavaScript로 구성
+
+Todo : NetLify로 Github 저장소 연동하여 배포

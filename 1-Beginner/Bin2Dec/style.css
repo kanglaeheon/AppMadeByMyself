@@ -1,0 +1,9 @@
+body {
+    background: url("bg-image.jpg") no-repeat center, rgba(0, 0, 0, 0.9);
+    background-blend-mode: multiply;
+    background-size: 250%;
+
+    font-family: "Roboto Mono", "Consolas", monospace;
+    font-size: 1em;
+    color:ghostwhite;
+}
