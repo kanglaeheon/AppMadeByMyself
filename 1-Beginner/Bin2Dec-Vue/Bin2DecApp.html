@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bin2Dec</title>
+    <!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- 렌더링 영역 -->
+    <div id="app">
+        <app-header></app-header>
+        <app-instructor></app-instructor>
+        <input-bin v-on:convert-input="convertInput"></input-bin>
+        <output-dec></output-dec>
+        <app-footer></app-footer>
+    </div>
+    
+    <script>
+        //  전역 컴포넌트
+        Vue.component("app-header", {
+            template: '<h1>{{ title }}</h1>',
+            data: function() {
+                return {
+                    title: "Bin2Dec"
+                }
+            }
+        });
+
+        Vue.component("app-instructor", {
+            template: `
+                <ul>
+                    <li>Enter a binary digit</li>
+                    <li>You can only enter 0 and 1</li>
+                    <li>After enter digits, press Convert!</li>
+                </ul>`
+        });
+
+        Vue.component("app-footer", {
+            template: '<p>&copy; kanglaeheon</p>'
+        });
+        
+        //  input 컴포넌트
+        let inputBin = {
+            template: `
+            <div>
+                <input v-model="dataBin" />
+                <button v-on:click="convertInput">Convert!</button>
+            </div>`,
+            data: function() {
+                return {
+                    dataBin: ""
+                }
+            },
+            methods: {
+                convertInput: function() {
+                    console.log("입력내용: ", this.dataBin);
+                    if (this.dataBin.trim().length > 0) {
+                        //  데이터를 부모로 전송
+                        this.$emit("convert-input", this.dataBin.trim());
+                    }
+                }
+            }
+        }
+
+        //  output 컴포넌트
+        let outputDec = {
+            //  props 받아오기
+            props: [data],
+            template: `
+            <div>
+                <p>{{ data-dec }}</p>
+            </div>`
+        }
+
+        //  Vue 인스턴스
+        let app = new Vue({
+            el: "#app",
+            data: { 
+                "data-bin": dataBin = "",
+                "data-dec": dataDec = "2진수를 입력해주세요"
+            },
+            components: {
+                "input-bin": inputBin,
+                "output-dec": outputDec
+            },
+            methods: { 
+                convertInput: function(dataBin) {
+                    dataDec = parseInt(dataBin, 2);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
