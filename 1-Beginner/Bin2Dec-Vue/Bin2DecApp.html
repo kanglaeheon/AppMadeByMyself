@@ -13,8 +13,8 @@
     <div id="app">
         <app-header></app-header>
         <app-instructor></app-instructor>
-        <input-bin v-on:convert-input="convertInput"></input-bin>
-        <output-dec></output-dec>
+        <input-bin v-bind:data-bin="dataBin" v-on:convert-input="convertInput"></input-bin>
+        <output-dec v-bind:data-dec="dataDec"></output-dec>
         <app-footer></app-footer>
     </div>
     
@@ -44,16 +44,12 @@
         
         //  input 컴포넌트
         let inputBin = {
+            props: ["data-bin"],
             template: `
             <div>
                 <input v-model="dataBin" />
                 <button v-on:click="convertInput">Convert!</button>
             </div>`,
-            data: function() {
-                return {
-                    dataBin: ""
-                }
-            },
             methods: {
                 convertInput: function() {
                     console.log("입력내용: ", this.dataBin);
@@ -67,20 +63,20 @@
 
         //  output 컴포넌트
         let outputDec = {
+            props: ["data-dec"],
             //  props 받아오기
-            props: [data],
             template: `
             <div>
-                <p>{{ data-dec }}</p>
-            </div>`
+                <p>{{ dataDec }}</p>
+            </div>`,
         }
 
         //  Vue 인스턴스
         let app = new Vue({
             el: "#app",
-            data: { 
-                "data-bin": dataBin = "",
-                "data-dec": dataDec = "2진수를 입력해주세요"
+            data: {
+                dataBin: "",
+                dataDec: "2진수를 입력해주세요"
             },
             components: {
                 "input-bin": inputBin,
@@ -88,7 +84,7 @@
             },
             methods: { 
                 convertInput: function(dataBin) {
-                    dataDec = parseInt(dataBin, 2);
+                    this.dataDec = parseInt(dataBin, 2);
                 }
             }
         });
